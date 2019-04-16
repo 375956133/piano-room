@@ -1,0 +1,24 @@
+/*
+* @Author: Administrator
+* @Date:   2019-04-12 16:23:59
+* @Last Modified by:   Administrator
+* @Last Modified time: 2019-04-12 16:45:31
+*/
+.resetpwd form{
+	width:90%;
+	margin:0 auto;
+}
+.resetpwd form input{
+	padding:1.8rem 1rem;
+}
+.resetpwd button{
+	width:100%;
+	padding:1rem 0;
+	
+}
+.resetpwd button a{
+	width:100%;
+	display: block;
+	font-size: 1.7rem;
+	color:#fff;
+}

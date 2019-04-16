@@ -1,0 +1,41 @@
+/*
+* @Author: Administrator
+* @Date:   2019-04-12 17:46:22
+* @Last Modified by:   Administrator
+* @Last Modified time: 2019-04-16 10:43:50
+*/
+.table th{
+	border:1px solid #ccc;
+	text-align: center;
+}
+.table td{
+	width: 77px;
+	height: 77px;
+	border:1px solid #ccc;
+	text-align: center;
+}
+.form-group label{
+	/* float: left; */
+	padding-top: 9px;
+}
+.form-group  input{
+	/* float: right; */
+	/* width:68%; */
+}
+.modal-body ul li{
+	height: 4rem;
+	line-height: 4rem;
+	border-bottom:1px solid #ccc;
+}
+.modal-footer button{
+	width:100%;
+	padding:1rem 0;
+	font-size: 1.7rem;
+	
+}
+.modal-body button a{
+	width:100%;
+	display: block;
+	font-size: 1.7rem;
+	color:#fff;
+}

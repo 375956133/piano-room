@@ -1,0 +1,23 @@
+/*
+* @Author: Administrator
+* @Date:   2019-04-12 14:43:19
+* @Last Modified by:   Administrator
+* @Last Modified time: 2019-04-12 16:46:41
+*/
+.stulogin form{
+	width:90%;
+	margin:0 auto;
+}
+.stulogin form input{
+	padding:1.8rem 1rem;
+}
+.stulogin button{
+	width:100%;
+	padding:1rem 0;
+}
+.stulogin button a{
+	width:100%;
+	display: block;
+	font-size: 1.7rem;
+	color:#fff;
+}

@@ -1,0 +1,29 @@
+/*
+* @Author: Administrator
+* @Date:   2019-04-12 10:18:38
+* @Last Modified by:   Administrator
+* @Last Modified time: 2019-04-12 13:24:07
+*/
+*{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration: none;
+}
+ul,li{
+	list-style: none;
+}
+img { width: auto; max-width: 100%; }
+
+table th, table td { padding: 0 0; text-align:left; }
+		
+html {font-size: 62.5%; /*10 ÷ 16 × 100% = 62.5%*/ }
+/* 1rem=10px */
+
+.fl{
+	float: left;
+}
+.fr{
+	float: right;
+}
