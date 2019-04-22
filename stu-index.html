@@ -9,11 +9,16 @@
 		<link rel="stylesheet" href="css/default.css">
 		<link rel="stylesheet" href="css/stu-index.css">
 		<link rel="stylesheet" href="css/footer.css">
+		<script src="lib/js/jquery-1.9.1.min.js"></script>
 		<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="lib/layui-v2.4.5/layui/layui.js"></script>
+		<script src="lib/js/vue.js"></script>
+		<script src="lib/js/axios.js"></script>
+		<script src="js/stu-index.js"></script>
+		
 	</head>
 	<body>
-		<div class="container qroom">
+		<div class="container qroom" id="qroom">
 			<div class="row" style="text-align:center;padding-top:1rem;">
 				<h3>琴房</h3>
 				<hr>
@@ -21,114 +26,76 @@
 			<div class="row">
 				<div class="layui-collapse">
 					<div class="layui-colla-item">
-						<h2 class="layui-colla-title">南琴楼</h2>
+						<h2 class="layui-colla-title louname"></h2>
 						<div class="layui-colla-content layui-show">
-							<ul>
-								<h2 class="layui-colla-title">一层</h2>
+							<ul class="ul1">
+								<h2 class="layui-colla-title cg">{{citems1}}</h2>
+								
 								<div class="layui-colla-content layui-show">
 									<table class="table">
-										<tr><td><a href="yuyue-infor.html">101</a></td></tr>
-										<tr><td><a href="#">102</a></td></tr>
-										<tr><td><a href="#">103</a></td></tr>
-										<tr><td><a href="#">104</a></td></tr>
-										<tr><td><a href="#">105</a></td></tr>
-										<tr><td><a href="#">106</a></td></tr>
-										<tr><td><a href="#">107</a></td></tr>
-										<tr><td><a href="#">108</a></td></tr>
-										<tr><td><a href="#">109</a></td></tr>
-										<tr><td><a href="#">110</a></td></tr>
+										<tr v-for="item in items1">
+											<td>
+												<a href="#">{{item.name}}</a>
+											</td>
+										</tr>
 									</table>
 								</div>
 							</ul>
 							<ul>
-								<h2 class="layui-colla-title">二层</h2>
+								<h2 class="layui-colla-title">{{citems2}}</h2>
 								<div class="layui-colla-content">
 									<table class="table">
-										<tr><td><a href="#">101</a></td></tr>
-										<tr><td><a href="#">102</a></td></tr>
-										<tr><td><a href="#">103</a></td></tr>
-										<tr><td><a href="#">104</a></td></tr>
-										<tr><td><a href="#">105</a></td></tr>
-										<tr><td><a href="#">106</a></td></tr>
-										<tr><td><a href="#">107</a></td></tr>
-										<tr><td><a href="#">108</a></td></tr>
-										<tr><td><a href="#">109</a></td></tr>
-										<tr><td><a href="#">110</a></td></tr>
+										<tr v-for="item in items2">
+											<td><a href="#">{{item.name}}</a></td>
+										</tr>
+										
 									</table>
 								</div>
 							</ul>
 							<ul>
-								<h2 class="layui-colla-title">三层</h2>
+								<h2 class="layui-colla-title">{{citems3}}</h2>
 								<div class="layui-colla-content">
 									<table class="table">
-										<tr><td><a href="#">101</a></td></tr>
-										<tr><td><a href="#">102</a></td></tr>
-										<tr><td><a href="#">103</a></td></tr>
-										<tr><td><a href="#">104</a></td></tr>
-										<tr><td><a href="#">105</a></td></tr>
-										<tr><td><a href="#">106</a></td></tr>
-										<tr><td><a href="#">107</a></td></tr>
-										<tr><td><a href="#">108</a></td></tr>
-										<tr><td><a href="#">109</a></td></tr>
-										<tr><td><a href="#">110</a></td></tr>
+										<tr v-for="item in items3">
+											<td><a href="#">{{item.name}}</a></td>
+										</tr>
+										
 									</table>
 								</div>
 							</ul>
-							
 							<ul>
-								<h2 class="layui-colla-title">四层</h2>
+								<h2 class="layui-colla-title">{{citems4}}</h2>
 								<div class="layui-colla-content">
 									<table class="table">
-										<tr><td><a href="#">101</a></td></tr>
-										<tr><td><a href="#">102</a></td></tr>
-										<tr><td><a href="#">103</a></td></tr>
-										<tr><td><a href="#">104</a></td></tr>
-										<tr><td><a href="#">105</a></td></tr>
-										<tr><td><a href="#">106</a></td></tr>
-										<tr><td><a href="#">107</a></td></tr>
-										<tr><td><a href="#">108</a></td></tr>
-										<tr><td><a href="#">109</a></td></tr>
-										<tr><td><a href="#">110</a></td></tr>
+										<tr v-for="item in items4">
+											<td><a href="#">{{item.name}}</a></td>
+										</tr>
+										
 									</table>
 								</div>
 							</ul>
-							
 							<ul>
-								<h2 class="layui-colla-title">五层</h2>
+								<h2 class="layui-colla-title">{{citems5}}</h2>
 								<div class="layui-colla-content">
 									<table class="table">
-										<tr><td><a href="#">101</a></td></tr>
-										<tr><td><a href="#">102</a></td></tr>
-										<tr><td><a href="#">103</a></td></tr>
-										<tr><td><a href="#">104</a></td></tr>
-										<tr><td><a href="#">105</a></td></tr>
-										<tr><td><a href="#">106</a></td></tr>
-										<tr><td><a href="#">107</a></td></tr>
-										<tr><td><a href="#">108</a></td></tr>
-										<tr><td><a href="#">109</a></td></tr>
-										<tr><td><a href="#">110</a></td></tr>
+										<tr v-for="item in items5">
+											<td><a href="#">{{item.name}}</a></td>
+										</tr>
+										
 									</table>
 								</div>
 							</ul>
-							
 							<ul>
-								<h2 class="layui-colla-title">六层</h2>
+								<h2 class="layui-colla-title">{{citems6}}</h2>
 								<div class="layui-colla-content">
 									<table class="table">
-										<tr><td><a href="#">101</a></td></tr>
-										<tr><td><a href="#">102</a></td></tr>
-										<tr><td><a href="#">103</a></td></tr>
-										<tr><td><a href="#">104</a></td></tr>
-										<tr><td><a href="#">105</a></td></tr>
-										<tr><td><a href="#">106</a></td></tr>
-										<tr><td><a href="#">107</a></td></tr>
-										<tr><td><a href="#">108</a></td></tr>
-										<tr><td><a href="#">109</a></td></tr>
-										<tr><td><a href="#">110</a></td></tr>
+										<tr v-for="item in items6">
+											<td><a href="#">{{item.name}}</a></td>
+										</tr>
+										
 									</table>
 								</div>
 							</ul>
-							
 							
 						</div>
 					</div>
@@ -166,5 +133,25 @@
 	layui.use('element', function(){
 		var element = layui.element;
 	});
+	var stuindex = new Vue({
+			el: "#qroom",
+			data() {
+				return {
+					items1: [],
+					items2: [],
+					items3: [],
+					items4: [],
+					items5: [],
+					items6: [],
+					citems1:"",
+					citems2:"",
+					citems3:"",
+					citems4:"",
+					citems5:"",
+					citems6:""
+				}
+			}
+		});
 	</script>
+	
 </html>

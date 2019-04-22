@@ -21,6 +21,7 @@
 		<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
 		<!-- 引入组件库 -->
 		<script src="https://unpkg.com/element-ui/lib/index.js"></script>
+		<script src="js/yuyue-infor.js"></script>
 		
 	</head>
 	<body>
@@ -46,30 +47,32 @@
 								<h4 class="modal-title" id="myModalLabel">预约自习琴房</h4>
 							</div>
 							<div class="modal-body">
-								<form>
+								<form id="Form">
 									<div class="form-group">
 										<label for="exampleInputEmail1">节数：</label>
-										<input class="form-control" value="1" name="numj" v-model="numj">
+										<input class="form-control" value="1" name="numj">
 									</div>
 									<div class="form-group">
 										<label for="exampleInputPassword1">开始自习时间：</label>
 										<el-time-picker
 										v-model="value2"
-										placeholder="任意时间点" name="timer" v-model="timer">
+										placeholder="任意时间点" name="timer">
 										</el-time-picker>
 									</div>
 									<div class="form-group">
 										<label for="exampleInputPassword1">选择时长：</label>
-										<el-input-number v-model="num9" :precision="2" :step="0.5" :max="10" name="timelong" v-model="timelong"></el-input-number>
+										<el-input-number v-model="num9" :precision="2" :step="0.5" :max="10" name="timelong"></el-input-number>
 									</div>
-									<div class="form-group">
-										<label for="exampleInputPassword1">日期：</label>
-										<input  type="date" class="form-control" name="datat">
-									</div>
+									<!-- <div class="form-group">
+											<label for="exampleInputPassword1">日期：</label>
+											<input  type="date" class="form-control" name="datat">
+									</div> -->
 									<div class="form-group">
 										<label for="exampleInputPassword1">我的课时：18小时0分钟</label>
 									</div>
-									<button  class="btn btn-danger" style="width:100%;"><a href="#">确认</a></button>
+									<button  class="btn btn-danger" style="width:100%;" type="submit">
+									<a href="#" onclick="checkForm();">确认</a>
+									</button>
 								</form>
 							</div>
 							
@@ -77,20 +80,91 @@
 					</div>
 				</div>
 				<!-- 模态框结束 -->
-				<table class="table">
+				<table class="table" id="tab1">
 					<tr>
-						<th>4月15</th>
-						<th>4月16</th>
-						<th>4月17</th>
-						<th>最新预约4-18</th>
+						<th>{{day}}</th>
+						<th>{{day1}}</th>
+						<th>{{day2}}</th>
+						<th>最新预约{{day3}}</th>
 					</tr>
 					<tr>
-						<td>{{numj}}1</td>
-						<td>{{timer}}</td>
+						<td></td>
+						<td>1</td>
+						<td></td>
 						<td>0004 16:23 已预约</td>
-						<td>{{timelong}}</td>
 					</tr>
-					
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</tr>
 					
 				</table>
 				<!-- 另一个模态框开始 -->
@@ -110,7 +184,7 @@
 							</div>
 							<div class="modal-footer">
 								<button class="btn btn-danger"  id="tdhasval">取消课程</button><br><br>
-								<button class="btn btn-danger">退出</button>
+								<!-- <button class="btn btn-danger">退出</button> -->
 							</div>
 						</div>
 					</div>
@@ -119,21 +193,41 @@
 			</div>
 		</div>
 	</body>
+	
 	<script>
+	var myDate = new Date();
+	var nextDate = new Date(myDate.getTime() + 24*60*60*1000); //后一天
+	var day=myDate.toLocaleDateString();    //获取当前日期
+	var mytime=myDate.toLocaleTimeString();     //获取当前时间
+	var nextDate = new Date(myDate.getTime() + 24*60*60*1000); //后一天
+	var nextDate2 = new Date(myDate.getTime() + 24*60*60*1000*2); //后两天
+	var nextDate3 = new Date(myDate.getTime() + 24*60*60*1000*3); //后三天
+	var day1=nextDate.toLocaleDateString();
+	var day2=nextDate2.toLocaleDateString();
+	var day3=nextDate3.toLocaleDateString();
+	
+	console.log(myDate);
+	console.log(day);
+	console.log(mytime);
+	console.log(nextDate);
+	console.log(day1);
+	console.log(day2);
+	console.log(day3);
 	var timer=new Vue({
 		el:"#yuyue",
 		data(){
 			return{
 				value2: new Date(2019),
 				num9:1,
-				numj:"",
-				timelong:"",
-				timer:""
+				day:day,
+				day1:day1,
+				day2:day2,
+				day3:day3
+				
 			}
 		}
 	});
 	
 	</script>
 	
-	<script src="js/yuyue-infor.js"></script>
 </html>

@@ -12,6 +12,7 @@
 		<script src='lib/js/jquery-1.9.1.min.js'></script>
 		<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
 		<script src="lib/layui-v2.4.5/layui/layui.js"></script>
+		<script src="lib/js/axios.js"></script>
 		<script src="js/resetpwd.js"></script>
 	</head>
 	<body>
@@ -21,19 +22,19 @@
 				<hr>
 			</div>
 			<div class="row">
-				<form action="http://localhost:3000/posts">
-					<div class="form-group">
-						<label for="exampleInputEmail1">请输入旧密码</label>
-						<input type="email" class="form-control">
-					</div>
-					<div class="form-group">
-						<label for="exampleInputPassword1">请输入新密码</label>
-						<input type="password" class="form-control">
-					</div>
-					<br>
-					<br>
-					<button type="submit" class="btn  btn-danger"><a href="#">确认</a></button>
-				</form>
+				<div class="form-group">
+					<label>请输入旧密码</label>
+					<input  class="form-control" name="opwd">
+				</div>
+				<div class="form-group">
+					<label>请输入新密码</label>
+					<input type="password" class="form-control" name="npwd">
+				</div>
+				<br>
+				<br>
+				<button type="button" class="btn  btn-danger">
+				<a href="#" onclick="resetform();">确认</a>
+				</button>
 			</div>
 		</div>
 	</body>
